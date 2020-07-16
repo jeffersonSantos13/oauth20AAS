@@ -10,9 +10,9 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 
 passport.use(new GoogleStrategy({
-    clientID: config.api_key,
-    clientSecret: config.api_secret,
-    callbackURL: config.callback_url
+    clientID: config.google.api_key,
+    clientSecret: config.google.api_secret,
+    callbackURL: config.google.callback_url
   },
   function(accessToken, refreshToken, profile, done) {
     return done(null, profile);
@@ -20,9 +20,9 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.use(new FacebookStrategy({
-      clientID: config.api_key_facebook,
-      clientSecret: config.api_secret_facebook,
-      callbackURL: config.callback_url_facebook,
+      clientID: config.facebook.api_key,
+      clientSecret: config.facebook.api_secret,
+      callbackURL: config.facebook.callback_url,
     },
     function(accessToken, refreshToken, profile, done) {
       return done(null, profile);
